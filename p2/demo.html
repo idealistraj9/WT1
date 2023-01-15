@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="clicks" class="clickContainer">
+        <button id="click1" class="clickStyle">1</button>
+        <button id="click2" class="clickStyle">2</button>
+        <button id="click3" class="clickStyle">3</button><br>
+        <button id="click4" class="clickStyle">4</button>
+        <button id="click5" class="clickStyle" onclick="raj()">5</button>
+        <button id="click6" class="clickStyle">6</button><br>
+        <button id="click7" class="clickStyle">7</button>
+        <button id="click8" class="clickStyle">8</button>
+        <button id="click9" class="clickStyle">9</button>
+        </div>
+        <script>
+            const arr = [1, 2, 3, 6, 9, 8, 7, 4]; 
+            let nums = [1, 2, 3, 6, 9, 8, 7, 4]; 
+            let click5 = document.getElementById("click5");
+
+             function raj() {
+                nums.unshift(nums.pop());
+                for (i = 0; i <= 7; i++) {
+                    document.getElementById("click" + arr[i]).innerHTML = nums[i];
+                }
+            };
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Btn</title>
+</head>
+<body>
+    <a onclick="javascript:GetDetail(car)" href="javascript:GetDetail(car)"><img src="car.png" alt="car-photo" srcset=""></a>
+    <a onclick="javascript:GetDetail(laptop)" href="javascript:GetDetail(laptop)"><img src="laptop.png" alt="car-photo" srcset=""></a>
+    <a onclick="javascript:GetDetail(phone)" href="javascript:GetDetail(phone)"><img src="phone.png" alt="car-photo" srcset=""></a>
+    <table id="tbl" border="2px solid gray"></table>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+        table{
+            border-collapse: collapse;
+            border: 1px solid gray;
+            border-collapse: collapse;
+            border-spacing: 0;
+            padding: 0;
+            margin-left: 40%;
+        }
+        img{
+            height: 300px;
+            padding: 50px;
+        }
+        td{
+            padding: 5px;
+            text-align: center;
+        }
+        tr{
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        let tbl = document.getElementById('tbl');
+        let car = {
+            name: "Tata Avinya Review",
+            EstimatedPrice: "₹ 30.00 - 60.00 Lakh",
+            ExpectedLaunch: "Feb 2025",
+            color: "Black",
+        }
+        let laptop = {
+            name: "ASUS ROG Strix G17 (2022)",
+            EstimatedPrice: "₹1,40,990",
+            Detail: "16GB/1TB SSD/90WHrs Battery/Windows",
+            CPUModel:	"Ryzen 7",
+            RAMMemory: "16 GB",
+        }
+        let phone = {
+            name: "ASUS ROG Phone 5S ",
+            EstimatedPrice: "₹1,10,000",
+            Detail: "256GB 12GB RAM Factory Unlocked (GSM Only)",
+            Color:	"Black",
+            RAMMemory: "12 GB",
+        }
+        function GetDetail(car) {
+            tbl.innerHTML = ""
+            Object.entries(car).forEach(([key, value]) => {
+                var tr = document.createElement('tr');
+                var td = document.createElement('td');
+                td.innerHTML = key;
+                tr.appendChild(td);
+                tbl.appendChild(tr);
+                td = document.createElement('td');
+                td.innerHTML = value;
+                tr.appendChild(td);
+                tbl.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+</html>
